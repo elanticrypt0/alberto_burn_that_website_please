@@ -37,7 +37,7 @@ async fn handle_request(mut stream: AsyncTcpStream) {
 }
 
 #[tokio::main]
-async fn main() {
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let listener = AsyncTcpListener::bind("127.0.0.1:8080").await.unwrap();
     println!("Listening on 127.0.0.1:8080");
     loop {
